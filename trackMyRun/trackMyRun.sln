@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "trackMyRun", "trackMyRun.csproj", "{498FA7FC-DD25-460E-993B-8C82A731E456}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{498FA7FC-DD25-460E-993B-8C82A731E456}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{498FA7FC-DD25-460E-993B-8C82A731E456}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{498FA7FC-DD25-460E-993B-8C82A731E456}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{498FA7FC-DD25-460E-993B-8C82A731E456}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EF2D5801-13FD-4054-BBEE-A389F4F00012}
+	EndGlobalSection
+EndGlobal
