@@ -1,4 +1,6 @@
 
+using Microsoft.EntityFrameworkCore;
+
 namespace trackMyRun
 {
     public class Program
@@ -8,7 +10,11 @@ namespace trackMyRun
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            string connString = builder.Configuration.GetConnectionString("TrackMyRunDB" ?? "");
 
+            builder.Services.AddDbContext<trackMyRunDbContext>(
+                options => options.UseMySql(connString, ServerVersion.AutoDetect(connString))
+                );
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
