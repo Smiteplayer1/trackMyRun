@@ -1,0 +1,1 @@
+Scaffold-DbContext "server=localhost;port=3306;user=root;password=password;database=track_my_run" Pomelo.EntityFrameworkCore.MySql -OutputDir DbEntities -f
