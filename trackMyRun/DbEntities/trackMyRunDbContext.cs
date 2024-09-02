@@ -4,12 +4,12 @@
 
 using Microsoft.EntityFrameworkCore;
 
-namespace trackMyRun
+namespace trackMyRun.DbEntities
 {
     public class trackMyRunDbContext : DbContext
     {
         public trackMyRunDbContext(
-            DbContextOptions<trackMyRunDbContext> options) 
+            DbContextOptions<trackMyRunDbContext> options)
             : base(options) { }
     }
 }

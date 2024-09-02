@@ -1,5 +1,6 @@
 
 using Microsoft.EntityFrameworkCore;
+using trackMyRun.DbEntities;
 
 namespace trackMyRun
 {
