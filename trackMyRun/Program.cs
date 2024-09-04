@@ -13,7 +13,7 @@ namespace trackMyRun
             // Add services to the container.
             string connString = builder.Configuration.GetConnectionString("TrackMyRunDB" ?? "");
 
-            builder.Services.AddDbContext<trackMyRunDbContext>(
+            builder.Services.AddDbContext<TrackMyRunContext>(
                 options => options.UseMySql(connString, ServerVersion.AutoDetect(connString))
                 );
             builder.Services.AddControllers();
