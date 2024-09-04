@@ -26,12 +26,13 @@ DROP TABLE IF EXISTS `note`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `note` (
   `note_id` int NOT NULL AUTO_INCREMENT,
+  `note_name` varchar(255) NOT NULL,
   `note_text` varchar(255) DEFAULT NULL,
   `run_id` int NOT NULL,
   PRIMARY KEY (`note_id`),
   KEY `run_id_idx` (`run_id`),
   CONSTRAINT `run_id` FOREIGN KEY (`run_id`) REFERENCES `runs` (`run_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,6 +41,7 @@ CREATE TABLE `note` (
 
 LOCK TABLES `note` WRITE;
 /*!40000 ALTER TABLE `note` DISABLE KEYS */;
+INSERT INTO `note` VALUES (1,'bunRuns','This run was buns',2);
 /*!40000 ALTER TABLE `note` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -61,7 +63,7 @@ CREATE TABLE `runs` (
   PRIMARY KEY (`run_id`),
   KEY `shoe_id_idx` (`shoe_id`),
   CONSTRAINT `shoe_id` FOREIGN KEY (`shoe_id`) REFERENCES `shoe` (`shoe_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -70,7 +72,7 @@ CREATE TABLE `runs` (
 
 LOCK TABLES `runs` WRITE;
 /*!40000 ALTER TABLE `runs` DISABLE KEYS */;
-INSERT INTO `runs` VALUES (2,'',3.11,'20','7.30',134,1);
+INSERT INTO `runs` VALUES (2,'Sweat Bannin',3.11,'20','7.30',134,1),(3,'HardOne',10,'100:00','10/mi',160,1),(4,'EasyRun',3,'24:12','4',145,1);
 /*!40000 ALTER TABLE `runs` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -110,4 +112,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-09-04  7:31:51
+-- Dump completed on 2024-09-04  8:47:57
