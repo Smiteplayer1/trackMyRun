@@ -37,6 +37,9 @@ public partial class TrackMyRunContext : DbContext
             entity.HasIndex(e => e.RunId, "run_id_idx");
 
             entity.Property(e => e.NoteId).HasColumnName("note_id");
+            entity.Property(e => e.NoteName)
+                .HasMaxLength(255)
+                .HasColumnName("note_name");
             entity.Property(e => e.NoteText)
                 .HasMaxLength(255)
                 .HasColumnName("note_text");
