@@ -52,6 +52,7 @@ DROP TABLE IF EXISTS `runs`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `runs` (
   `run_id` int NOT NULL AUTO_INCREMENT,
+  `run_name` varchar(255) NOT NULL,
   `distance` float NOT NULL,
   `time` varchar(255) NOT NULL,
   `avg_pace` varchar(255) DEFAULT NULL,
@@ -60,7 +61,7 @@ CREATE TABLE `runs` (
   PRIMARY KEY (`run_id`),
   KEY `shoe_id_idx` (`shoe_id`),
   CONSTRAINT `shoe_id` FOREIGN KEY (`shoe_id`) REFERENCES `shoe` (`shoe_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,6 +70,7 @@ CREATE TABLE `runs` (
 
 LOCK TABLES `runs` WRITE;
 /*!40000 ALTER TABLE `runs` DISABLE KEYS */;
+INSERT INTO `runs` VALUES (2,'',3.11,'20','7.30',134,1);
 /*!40000 ALTER TABLE `runs` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -86,7 +88,7 @@ CREATE TABLE `shoe` (
   `size` decimal(4,1) NOT NULL,
   `shoe_img` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`shoe_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -95,6 +97,7 @@ CREATE TABLE `shoe` (
 
 LOCK TABLES `shoe` WRITE;
 /*!40000 ALTER TABLE `shoe` DISABLE KEYS */;
+INSERT INTO `shoe` VALUES (1,'Hoka Mach 5','M',13.0,NULL),(2,'Asics Gel Nimbus 25','D/E',13.0,'not inputted'),(4,'Asics NovaBlast 3','E',13.0,'string');
 /*!40000 ALTER TABLE `shoe` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -107,4 +110,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-09-02 10:55:46
+-- Dump completed on 2024-09-04  7:31:51

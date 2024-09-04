@@ -62,6 +62,9 @@ public partial class TrackMyRunContext : DbContext
                 .HasColumnName("avg_pace");
             entity.Property(e => e.Distance).HasColumnName("distance");
             entity.Property(e => e.HeartRate).HasColumnName("heart_rate");
+            entity.Property(e => e.RunName)
+                .HasMaxLength(255)
+                .HasColumnName("run_name");
             entity.Property(e => e.ShoeId).HasColumnName("shoe_id");
             entity.Property(e => e.Time)
                 .HasMaxLength(255)
