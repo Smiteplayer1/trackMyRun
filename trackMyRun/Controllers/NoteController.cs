@@ -34,11 +34,21 @@ namespace trackMyRun.Controllers
                     return BadRequest(500);
                 }
 
-                var noteDto = dbContext.Notes.Where(x => x.NoteId == id).Select(x => new NoteDto { NoteId = x.NoteId, NoteName = x.NoteName,NoteText = x.NoteText, RunId = x.RunId }).ToList();
+                var noteDto = dbContext.Notes
+                    .Where(x => x.NoteId == id)
+                    .Select(
+                        x =>
+                            new NoteDto
+                            {
+                                NoteId = x.NoteId,
+                                NoteName = x.NoteName,
+                                NoteText = x.NoteText,
+                                RunId = x.RunId
+                            }
+                    )
+                    .ToList();
 
                 return Ok(noteDto);
-
-               
             }
             catch (Exception)
             {
